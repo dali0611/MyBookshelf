@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBookshelf</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#80664F">
+</head>
+<body>
+
+    <header>
+        <h1>MyBookshelf</h1>
+        <p>Un espacio para cada historia.</p>
+    </header>
+
+    <nav>
+        <button id="volverInicio">Inicio</button>
+        <button>Mi biblioteca</button>
+        <button>Favoritos</button>
+        <button>Mis lecturas</button>
+    </nav>
+<section id="paginaInicio" class="pagina-inicio">
+
+    <div class="bienvenida-contenido">
+        <p class="bienvenida-etiqueta">TU RINCÓN LITERARIO</p>
+
+        <h2>Donde cada historia<br>encuentra su lugar.</h2>
+
+        <p class="bienvenida-descripcion">
+            Un espacio para guardar tus libros,
+            descubrir tus próximas lecturas y conservar
+            esos pequeños fragmentos que dejan huella.
+        </p>
+<p id="fraseLiteraria" class="frase-literaria"></p>
+        <button id="entrarBiblioteca">
+            Entrar a mi biblioteca →
+        </button>
+    </div>
+
+</section>
+
+   <main>
+    <h2>Mi biblioteca</h2>
+    <div class="estadisticas">
+
+    <div class="estadistica">
+        <h3 id="totalLibros">0</h3>
+        <p>Total de libros</p>
+    </div>
+
+    <div class="estadistica">
+        <h3 id="librosTerminados">0</h3>
+        <p>Terminados</p>
+    </div>
+
+    <div class="estadistica">
+        <h3 id="librosLeyendo">0</h3>
+        <p>Leyendo</p>
+    </div>
+
+    <div class="estadistica">
+        <h3 id="librosPendientes">0</h3>
+        <p>Pendientes</p>
+    </div>
+
+    <div class="estadistica">
+        <h3 id="totalFavoritos">0</h3>
+        <p>Favoritos ♡</p>
+    </div>
+
+</div>
+    <p>Todos tus libros en un solo lugar.</p>
+
+<div class="buscador">
+    <input
+        type="text"
+        id="buscarLibro"
+        placeholder="🔎 Buscar por título o autor..."
+    >
+</div>
+    <section id="biblioteca">
+        <div class="libros">
+            <h3>📖 Tus historias aparecerán aquí</h3>
+            <p>Comienza agregando tu primer libro.</p>
+        </div>
+    </section>
+
+<div class="categorias">
+    <button onclick="filtrarLibros('Todos')">Todos</button>
+    <button onclick="filtrarLibros('Pendiente')">Pendientes</button>
+    <button onclick="filtrarLibros('Leyendo')">Leyendo</button>
+    <button onclick="filtrarLibros('Terminado')">Terminados</button>
+    <button onclick="filtrarLibros('Favoritos')">♡ Favoritos</button>
+</div>
+
+    <button id="agregarLibro">+ Agregar libro</button>
+</main>
+
+<div id="ventanaFicha" class="ventana-ficha">
+    <div class="contenido-ficha">
+
+        <button id="cerrarFicha" class="cerrar-ficha">✕</button>
+
+        <h2>Mi ficha de lectura 🤎</h2>
+
+        <label>Género literario</label>
+        <input id="generoLibro" type="text" placeholder="Romance, fantasía...">
+
+        <label>Fecha de inicio</label>
+        <input id="fechaInicio" type="date">
+<h3>📖 Mi progreso de lectura</h3>
+
+<label>Total de páginas</label>
+<input
+    id="totalPaginas"
+    type="number"
+    min="1"
+    placeholder="Ejemplo: 300"
+>
+
+<label>Páginas leídas</label>
+<input
+    id="paginasLeidas"
+    type="number"
+    min="0"
+    placeholder="Ejemplo: 120"
+>
+        <label>Fecha de finalización</label>
+        <input id="fechaFin" type="date">
+
+        <label>Mi calificación</label>
+        <select id="calificacionLibro">
+            <option value="">Sin calificar</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+
+        <label>Mi opinión sobre el libro</label>
+        <textarea id="opinionLibro" placeholder="¿Qué te pareció esta historia?"></textarea>
+
+        <h3>♡ Mis frases favoritas</h3>
+        <div id="frasesFicha"></div>
+
+        <button id="guardarFicha">Guardar ficha</button>
+
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
